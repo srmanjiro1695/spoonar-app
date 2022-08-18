@@ -1,0 +1,40 @@
+$radius: 10px;
+
+.card {
+  border: 2px solid #0b5ed7;
+  border-radius: $radius;
+}
+
+.content {
+  padding: 10px;
+}
+
+.img {
+  border-radius: $radius $radius 0 0;
+}
+
+.badgeFont {
+  font-size: 12px;
+  margin-right: 5px !important;
+}
+
+.iconFont {
+  font-size: 14px;
+  margin-right: 5px !important;
+}
+
+.fs8 {
+    font-size: 0.8rem!important;
+}
+
+.heart {
+  top: 10px;
+  right: 20px;
+  font-size: 14px;
+}
+
+.pulse {
+  top: 10px;
+  right: 70px;
+  font-size: 14px;
+}
