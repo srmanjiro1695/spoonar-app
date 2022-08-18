@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 
-const Pagination = ({ updatePageNumber }) => {
+const Pagination = ({ totalResults, numberPerPagePagination, updatePageNumber }) => {
+  const pageCounter = isNaN(Math.round(totalResults/numberPerPagePagination)) ? 0 : Math.round(totalResults/numberPerPagePagination)
+
+
+
   let pageChange = (data) => {
-    updatePageNumber(data.selected + 1);
+    updatePageNumber(data.selected);
   };
 
   const [width, setWidth] = useState(window.innerWidth);
   const updateDimensions = () => {
     setWidth(window.innerWidth);
   };
+
   useEffect(() => {
     window.addEventListener("resize", updateDimensions);
     return () => window.removeEventListener("resize", updateDimensions);
@@ -45,6 +50,10 @@ const Pagination = ({ updatePageNumber }) => {
         activeClassName="active"
         marginPagesDisplayed={width < 576 ? 1 : 2}
         pageRangeDisplayed={width < 576 ? 1 : 2}
+
+        pageCount={pageCounter}
+
+        onPageChange={pageChange}
 
         pageClassName="page-item"
         pageLinkClassName="page-link"
