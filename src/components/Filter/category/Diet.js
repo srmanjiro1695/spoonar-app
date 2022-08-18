@@ -2,7 +2,7 @@ import React from "react";
 import FilterBTN from "../FilterBTN";
 
 const Diet = ({ updateDiet }) => {
-  let species = [
+  let diet = [
     "gluten Free",
     "ketogenic",
     "vegetarian",
@@ -36,7 +36,7 @@ const Diet = ({ updateDiet }) => {
         data-bs-parent="#accordionExample"
       >
         <div className="accordion-body d-flex flex-wrap gap-3">
-          {species.map((item, index) => {
+          {diet.map((item, index) => {
             return (
               <FilterBTN
                 name="Diet"

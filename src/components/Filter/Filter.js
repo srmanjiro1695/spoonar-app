@@ -1,10 +1,8 @@
 import React from "react";
 import Cuisine from "./category/Cuisine";
 import Diet from "./category/Diet";
-/*
 import Intolerance from "./category/Intolerance";
 import MealType from "./category/MealType";
-*/
 
 const Filter = ({
   updateCuisine,
@@ -37,6 +35,14 @@ const Filter = ({
         />
         <Diet
           updateDiet={updateDiet}
+        />
+
+        <Intolerance
+          updateIntolerance={updateIntolerance}
+        />
+
+        <MealType
+          updateMealType={updateMealType}
         />
         
       </div>
