@@ -47,7 +47,8 @@ const Home = () =>{
 	    number: numberPerPage,
 	    apiKey:key,
 	    offset: offsetLimit,
-	    cuisine: cuisineSearch
+	    cuisine: cuisineSearch,
+	    diet:dietSearch
 	});
 
 	let api_call = "https://api.spoonacular.com/recipes/complexSearch?"+queryString;

@@ -1,7 +1,7 @@
 import React from "react";
 import Cuisine from "./category/Cuisine";
-/*
 import Diet from "./category/Diet";
+/*
 import Intolerance from "./category/Intolerance";
 import MealType from "./category/MealType";
 */
@@ -34,6 +34,9 @@ const Filter = ({
       <div className="accordion" id="accordionExample">
         <Cuisine
           updateCuisine={updateCuisine}
+        />
+        <Diet
+          updateDiet={updateDiet}
         />
         
       </div>
