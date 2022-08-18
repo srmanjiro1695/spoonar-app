@@ -6,9 +6,7 @@ import Search from "./components/Search/Search";
 import Card from "./components/Card/Card";
 import Pagination from "./components/Pagination/Pagination";
 
-/*
 import Filter from "./components/Filter/Filter";
-*/
 
 
 function App(){
@@ -23,10 +21,16 @@ const Home = () =>{
 	const key = "f25c41b6441745159634c8d95ad643ba";
 
 	let [fetchedData, updateFetchedData] = useState([]);
-	let [search, setSearch] = useState("pasta");
+	let [search, setSearch] = useState("");
 	let [numberPerPage, setNumberPerPage] = useState(25);
 	let { totalResults, results, number, offset} = fetchedData;
 	let [offsetLimit,setOffsetLimit] = useState(0)
+
+	let [cuisineSearch, updateCuisine] = useState("");
+  	let [dietSearch, updateDiet] = useState("");
+  	let [intoleranceSearch, updateIntolerance] = useState("");
+  	let [mealTypeSearch, updateMealType] = useState("");
+
 
 	function objToQueryString(obj) {
 	  const keyValuePairs = [];
@@ -42,7 +46,8 @@ const Home = () =>{
 	    addRecipeInformation: true,
 	    number: numberPerPage,
 	    apiKey:key,
-	    offset: offsetLimit
+	    offset: offsetLimit,
+	    cuisine: cuisineSearch
 	});
 
 	let api_call = "https://api.spoonacular.com/recipes/complexSearch?"+queryString;
@@ -71,8 +76,14 @@ const Home = () =>{
 	      />
 	      <div className="container">
 	        <div className="row">
-	         
-	          <div className="col-lg-12 col-12">
+	          <Filter
+	            updateCuisine={updateCuisine}
+	            updateDiet={updateDiet}
+	            updateIntolerance={updateIntolerance}
+	            updateMealType={updateMealType}
+	          />
+
+	          <div className="col-lg-9 col-12">
 	            <div className="row">
 	              <Card page="/" results={results} />
 	            </div>

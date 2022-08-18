@@ -9,3 +9,16 @@ body{
 .ubuntu{
 	font-family: "Ubuntu" sans-serif !important;
 }
+
+.form-check{
+	padding-left: 0em !important;
+	margin-bottom: 0rem !important;
+}
+
+.btn-outline-primary{
+	font-size: 12px !important;
+}
+
+iframe{
+	z-index: -99999 !important;
+}
