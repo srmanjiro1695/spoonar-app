@@ -6,8 +6,8 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">
       <div className="container">
-        <Link to="/" className="navbar-brand fs-3 ubuntu">
-          Spoonar App <span className="text-primary">WiKi</span>
+        <Link to="/" className="navbar-brand fs-5 ubuntu">
+          Spoonar App
         </Link>
         <style jsx>
           {`
