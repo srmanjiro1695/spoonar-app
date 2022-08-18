@@ -22,7 +22,9 @@ const Card = ({ page, results }) => {
       let { id, image, title, vegan, vegetarian, veryHealthy, veryPopular, diets, dishTypes, glutenFree, healthScore, likes, summary, cheap } = x;
 
       return (
-        <div
+        <Link
+          style={{ textDecoration: "none" }}
+          to={`${page}${id}`}
           key={id}
           className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative text-dark"
         >
@@ -59,7 +61,7 @@ const Card = ({ page, results }) => {
             {healthScore}
           </div>
 
-        </div>
+        </Link>
       );
     });
   } else {

@@ -5,15 +5,30 @@ import React, {useState , useEffect} from "react";
 import Search from "./components/Search/Search";
 import Card from "./components/Card/Card";
 import Pagination from "./components/Pagination/Pagination";
-
 import Filter from "./components/Filter/Filter";
+
+import Navbar from "./components/Navbar/Navbar";
+
+/*
+import Episodes from "./Pages/Episodes";
+import Location from "./Pages/Location";
+*/
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CardDetails from "./components/Card/CardDetails";
 
 
 function App(){
 	return(
-		<>
-			<Home />
-		</>
+		<Router>
+	      <div className="App">
+	        <Navbar />
+	      </div>
+	      <Routes>
+	        <Route path="/" element={<Home />} />
+	        <Route path="/:id" element={<CardDetails />} />
+	      </Routes>
+	    </Router>
 	);
 }
 
